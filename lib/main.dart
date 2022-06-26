@@ -8,6 +8,7 @@ class DiceeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    var leftDiceNumber = 5;
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.red,
@@ -25,7 +26,7 @@ class DiceeApp extends StatelessWidget {
                   onPressed: () {
                     print("dice 1 clicked");
                   },
-                  child: Image.asset('images/dice1.png'),
+                  child: Image.asset('images/dice${leftDiceNumber}.png'),
                 ),
               ),
               Expanded(
