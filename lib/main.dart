@@ -5,10 +5,12 @@ void main() {
 }
 
 class DiceeApp extends StatelessWidget {
+  var leftDiceNumber = 5;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    var leftDiceNumber = 5;
+
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.red,
