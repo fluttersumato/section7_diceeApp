@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(DiceeApp());
+  runApp(DiceApp());
 }
 
-class DiceeApp extends StatelessWidget {
-  var leftDiceNumber = 5;
+class DiceApp extends StatefulWidget {
+  const DiceApp({Key? key}) : super(key: key);
+
+  @override
+  State<DiceApp> createState() => _DiceAppState();
+}
+
+class _DiceAppState extends State<DiceApp> {
+  int leftDiceNumber = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +33,9 @@ class DiceeApp extends StatelessWidget {
               Expanded(
                 child: TextButton(
                   onPressed: () {
-                    print("dice 1 clicked");
+                    setState(() {
+                      leftDiceNumber = 4;
+                    });
                   },
                   child: Image.asset('images/dice${leftDiceNumber}.png'),
                 ),
