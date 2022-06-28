@@ -35,10 +35,7 @@ class _DiceAppState extends State<DiceApp> {
               Expanded(
                 child: TextButton(
                   onPressed: () {
-                    setState(() {
-                      leftDiceNumber = Random().nextInt(6) + 1;
-                      rightDiceNumber = Random().nextInt(6) + 1;
-                    });
+                    randomDiceNumberGenerator();
                   },
                   child: Image.asset('images/dice${leftDiceNumber}.png'),
                 ),
@@ -46,13 +43,7 @@ class _DiceAppState extends State<DiceApp> {
               Expanded(
                 child: TextButton(
                   onPressed: () {
-                    setState(
-                      () {
-                        rightDiceNumber = Random().nextInt(6) + 1;
-                        leftDiceNumber = Random().nextInt(6) + 1;
-                      },
-                    );
-                    print("dice 2 clicked");
+                    randomDiceNumberGenerator();
                   },
                   child: Image.asset('images/dice$rightDiceNumber.png'),
                 ),
@@ -62,5 +53,12 @@ class _DiceAppState extends State<DiceApp> {
         ),
       ),
     );
+  }
+
+  void randomDiceNumberGenerator() {
+    setState(() {
+      leftDiceNumber = Random().nextInt(6) + 1;
+      rightDiceNumber = Random().nextInt(6) + 1;
+    });
   }
 }
